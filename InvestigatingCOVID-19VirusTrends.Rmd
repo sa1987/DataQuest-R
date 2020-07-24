@@ -1,0 +1,91 @@
+---
+title: "InvestigatingCOVID-19VirusTrends"
+author: "Aswathi"
+date: "7/24/2020"
+output: html_document
+---
+```{r setup, include=TRUE}
+chooseCRANmirror(graphics=FALSE, ind=1)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## First Project
+
+In this Guided Project, we use a dataset, from Kaggle, that we have prepared and made available here for download. This dataset was collected between the 20th of January and the 1st of June 2020. The purpose of this Guided Project is to build our skills and understanding of the data analysis workflow by evaluating the COVID-19 situation through this dataset. At the end of this project, feel free to download the updated version of the dataset and take the same steps to analyze it.
+
+Our analysis tries to provide an answer to this question: Which countries have had the highest number of positive cases against the number of tests?
+
+### Understanding the Data
+
+```{r}
+install.packages("tidyverse")
+library(readr) # Load the readr library
+library(dplyr)
+
+covid_df <- read.csv("covid19.csv") # upload the csv file and create a dataframe(DF)
+dim(covid_df) #Find the dimension of the data frame
+vector_cols <- colnames(covid_df) #Find the column names
+print(vector_cols)
+
+str(vector_cols) # FInd the datastructure
+
+head(vector_cols)
+glimpse(vector_cols)
+
+```
+### Isolating the ROws we need
+
+```{r chunk2}
+covid_df_all_states <- filter(covid_df, Province_State == "All States") #filter the rows related to states alone 
+
+```
+### Isolating the Columns We Need
+
+
+```{r}
+
+covid_df_all_states_daily <- select(covid_df_all_states, Date, Country_Region, active, hospitalizedCurr, daily_tested, daily_positive) 
+
+
+```
+
+### Extracting top ten tested countries
+
+#### 
+Our goal here is to extract the top ten cases countries data. Acting like a data scientist, at this step, these are the questions we are asking ourselves.
+    How can we get the overall number of COVID-19 tested, positive, active and hospitalized cases by country since we currently have daily data?
+    How do we then extract the top ten?
+
+The first question hides the notions of group (by country) and data aggregation (summing daily information). These two notions refer to the functions group_by() and summarize() that we learned in the dataframe mission. 
+####
+
+```{r}
+
+
+
+```
+```{r}
+
+
+
+```
+```{r}
+
+
+
+```
+```{r}
+
+
+
+```
+```{r}
+
+
+
+```
+```{r}
+
+
+
+```

@@ -1,0 +1,21 @@
+---
+title: "initialSetup"
+Author: "Aswathi"
+output: html_document
+---
+
+```{r setup, include=TRUE}
+chooseCRANmirror(graphics=FALSE, ind=1)
+knitr::opts_chunk$set(echo = TRUE)
+```
+###FIrst step
+
+This is first step taken before the project started. TO learn more about R-Markdown,
+https://rmarkdown.rstudio.com/lesson-3.html
+Good Luck
+
+
+```{r}
+setwd("~/personl/MOOC/DataQuest/DataAnalystPathInR/DataQuest")
+install.packages("rmarkdown")
+```
