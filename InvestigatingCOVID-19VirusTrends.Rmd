@@ -56,7 +56,11 @@ Our goal here is to extract the top ten cases countries data. Acting like a data
     How can we get the overall number of COVID-19 tested, positive, active and hospitalized cases by country since we currently have daily data?
     How do we then extract the top ten?
 
-The first question hides the notions of group (by country) and data aggregation (summing daily information). These two notions refer to the functions group_by() and summarize() that we learned in the dataframe mission. 
+The first question hides the notions of group (by country) and data aggregation (summing daily information). These two notions refer to the functions group_by() and summarize() that we learned in the dataframe mission.
+
+The second question refers instead to the notion of order. The trick is that if we arrange the dataset by the number of tests performed the top ten represents the first ten rows of the arranged dataset. Accordingly, we can arrange the dataset using the function arrange() and use the function head() to extract the first ten rows.
+
+Hence, we will summarize the covid_df_all_states_daily dataframe by computing the overall number of tested, positive, active and hospitalized cases. Then, we can arrange this aggregated data by the overall number of tested cases. Finally, we can extract the first ten rows as the top ten tested cases countries.
 ####
 
 ```{r}
